@@ -103,7 +103,7 @@ public class MainActivity extends ActionBarActivity {
 		
 		int arabic = Integer.parseInt(s.toString());
 		
-		if(arabic>10000){
+		if(arabic>10000){ //otherwise the roman numerals start to get out of hand...
 			setInputField(arabicInput,"10000");
 		    Toast.makeText(this, "Sorry, the maximum value is 10000", Toast.LENGTH_SHORT).show();
 		    return;
@@ -111,7 +111,7 @@ public class MainActivity extends ActionBarActivity {
 		
 		String roman = "";
 		
-		// calculate the value in roman numerals
+		// calculate the value in roman numerals. This probably could be done better...
 		
 		while(arabic>=1000){
 			roman = roman +"M";
@@ -176,61 +176,54 @@ public class MainActivity extends ActionBarActivity {
 		char[] roman = s.toString().toCharArray();
 		int arabic =0;
 	
-		int i = roman.length-1;
-        while(i>=0){
+		
+        for (int i = roman.length-1; i>=0 ; i-- ) {
             switch(roman[i]){
-            case 'I': // 73 = "I"
+            case 'I': 
                 arabic +=1;
-                i-=1;
                 break;
-            case 'V': // 86 = "V" 
+            case 'V':  
                 arabic +=5;
-                if(i-1 >=0 && roman[i-1]==73){ // 73 = "I"
+                if(i-1 >=0 && roman[i-1]==73){ // 73 = 'I'
                     arabic -= 1;
-                    i-=1;
+                    i--;
                 }
-                i-=1;
                 break;
-            case 'X': // 88 = "X"
+            case 'X': 
                 arabic += 10;
-                if(i-1 >=0 && roman[i-1]==73){ // 73 = "I"
+                if(i-1 >=0 && roman[i-1]==73){ 
                     arabic -= 1;
-                    i-=1;
+                    i--;
                 }
-                i-=1;
                 break;
-            case 'L': // L
+            case 'L': 
                 arabic += 50;
-                if(i-1 >=0 && roman[i-1]==88){ // 88 = "X"
+                if(i-1 >=0 && roman[i-1]==88){ // X
                     arabic -= 10;
-                    i-=1;
+                    i--;
                 }
-                i-=1;
                 break;
-            case 'C': // C
+            case 'C':
                 arabic +=100;
-                if(i-1 >=0 && roman[i-1]==88){ // 88 = "X"
+                if(i-1 >=0 && roman[i-1]==88){ 
                     arabic -= 10;
-                    i-=1;
+                    i--;
                 }
-                i-=1;
                 break;
-            case 'D': //D
+            case 'D': 
                 arabic +=500;
-                if(i-1 >=0 && roman[i-1]==67){ // 67 = "C"
+                if(i-1 >=0 && roman[i-1]==67){ 
                     arabic -= 100;
-                    i-=1;
+                    i--;
                 }
-                i-=1;
                 break;
-            case 'M': //M
+            case 'M': 
                 arabic +=1000;
-                i-=1;
                 break;
             }
         }
 		
-		if(arabic>10000){
+		if(arabic>10000){ // for consistency 
 			setInputField(romanInput,"MMMMMMMMMM");
 		    Toast.makeText(this, "Sorry, the maximum value is MMMMMMMMMM", Toast.LENGTH_SHORT).show();
 		    return;
@@ -249,13 +242,13 @@ public class MainActivity extends ActionBarActivity {
 		e.setText(s);
 	}
 	
+	//	Added this to fix bug where empty input would throw an error
 	public static boolean isInteger(String s) {
 	    try { 
 	        Integer.parseInt(s); 
 	    } catch(NumberFormatException e) { 
 	        return false; 
 	    }
-	    // only got here if we didn't return false
 	    return true;
 	}
 }
