@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Roman Numeral Calculator</string>
+    <string name="arabic_numeral">Arabic Numerals</string>
+    <string name="arabic_hint">1234&#8230;</string>
+    <string name="roman_numeral">Roman Numerals</string>
+    <string name="roman_hint">XVI&#8230;</string>
+    <string name="action_settings">Settings</string>
+    <string name="roman_input">Roman Numeral Input</string>
+</resources>

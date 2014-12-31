@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="33.3%p"
+    android:keyHeight="12.5%p">
+    <!-- 
+    
+    @key_layout
+    3 rows, 3 keys per row
+    for Roman Numeral input
+    
+    - - - - - - -
+    |  I  V  X  |
+    |  L  C  D  |
+    |     M     |
+    - - - - - - -
+    
+     -->
+    <Row>
+       	<Key android:codes="73"    android:keyLabel="I" android:keyWidth="33.3%p" />
+       	<Key android:codes="86"    android:keyLabel="V" android:keyWidth="33.3%p" />
+       	<Key android:codes="88"    android:keyLabel="X" android:keyWidth="33.3%p" />
+    </Row>
+    <Row>
+       	<Key android:codes="76"    android:keyLabel="L" android:keyWidth="33.3%p" />
+       	<Key android:codes="67"    android:keyLabel="C" android:keyWidth="33.3%p" />
+       	<Key android:codes="68"    android:keyLabel="D" android:keyWidth="33.3%p" />
+    </Row>
+    <Row>
+        <Key android:codes="-5"    android:keyLabel="Clear" 
+       	     android:keyWidth="33.3%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
+       	<Key android:codes="77"    android:keyLabel="M" android:keyWidth="33.3%p" />
+        <Key android:codes="-3"    android:keyLabel="Back" 
+       	     android:keyWidth="33.3%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
+    </Row>
+    
+</Keyboard>
