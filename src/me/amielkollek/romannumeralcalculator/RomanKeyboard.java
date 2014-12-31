@@ -58,29 +58,11 @@ class RomanKeyboard {
             EditText edittext = (EditText) focusCurrent;
             Editable editable = edittext.getText();
             int start = edittext.getSelectionStart();
-            // Apply the key to the edittext
-//            if( primaryCode==CodeCancel ) {
-//                hideRomanKeyboard();} else 
             if( primaryCode==CodeBack ) {
                 if( editable!=null && start>0 ) editable.delete(start - 1, start);
             } else if( primaryCode==CodeClear ) {
                 if( editable!=null ) editable.clear();
             }
-//             else if( primaryCode==CodeLeft ) {
-//                if( start>0 ) edittext.setSelection(start - 1);
-//            } else if( primaryCode==CodeRight ) {
-//                if (start < edittext.length()) edittext.setSelection(start + 1);
-//            } else if( primaryCode==CodeAllLeft ) {
-//                edittext.setSelection(0);
-//            } else if( primaryCode==CodeAllRight ) {
-//                edittext.setSelection(edittext.length());
-//            } else if( primaryCode==CodePrev ) {
-//                View focusNew= edittext.focusSearch(View.FOCUS_BACKWARD);
-//                if( focusNew!=null ) focusNew.requestFocus();
-//            } else if( primaryCode==CodeNext ) {
-//                View focusNew= edittext.focusSearch(View.FOCUS_FORWARD);
-//                if( focusNew!=null ) focusNew.requestFocus();}
-            
         	else { // insert character
                 editable.insert(start, Character.toString((char) primaryCode));
             }
@@ -187,5 +169,3 @@ class RomanKeyboard {
 }
 
 
-// NOTE How can we change the background color of some keys (like the shift/ctrl/alt)?
-// NOTE What does android:keyEdgeFlags do/mean
